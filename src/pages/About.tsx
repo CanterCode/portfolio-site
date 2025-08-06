@@ -2,23 +2,59 @@ function About() {
   return (
     <section className="py-5 bg-light text-dark">
       <div className="container">
-        <h2 className="text-center mb-4 display-5">
-          About Me & Professional Summary
-        </h2>
-
-        <div className="row mb-5">
+        {/* About Me with collage side-by-side */}
+        <div className="row mb-5 align-items-center">
           <div className="col-md-6">
-            <h3 className="h4 mb-3">Personal Summary</h3>
-            <p></p>
+            <h2 className="mb-4 display-5">About Me</h2>
+            <p>
+              Hi, I’m Josh — oldest of nine siblings, world traveler, bartender
+              turned software engineer, devouted husband, and soon-to-be dad. My journey thus far has
+              taught me resilience and adaptability, qualities that I bring into
+              every project.
+            </p>
           </div>
-          <div className="col-md-6">
-            <h3 className="h4 mb-3">Professional Summary</h3>
-            <p></p>
+          <div className="col-md-6 d-flex justify-content-center">
+            {/* Placeholder for your interactive collage */}
+            <div
+              className="border rounded"
+              style={{
+                width: "100%",
+                maxWidth: "400px",
+                height: "250px",
+                backgroundColor: "#e9ecef",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#6c757d",
+                fontStyle: "italic",
+                fontSize: "1.2rem",
+                textAlign: "center",
+                padding: "1rem",
+              }}
+            >
+              Interactive Collage Placeholder
+              <br />
+              (Travel, Family, Adventures...)
+            </div>
           </div>
         </div>
 
-        <h2 className="text-center mb-4 display-5">Skills</h2>
+        {/* Professional Summary */}
+        <h2 className="text-center mb-4 display-5">Professional Summary</h2>
+        <div className="row mb-5 justify-content-center">
+          <div className="col-md-8">
+            <p>
+              I’m a front-end software engineer with experience leading teams
+              through tech residencies and building responsive, user-focused web
+              apps. Skilled in React, Redux, TypeScript, and agile workflows,
+              I’m passionate about delivering clean, maintainable code and
+              collaborating effectively.
+            </p>
+          </div>
+        </div>
 
+        {/* Skills */}
+        <h2 className="text-center mb-4 display-5">Skills</h2>
         <div className="row mb-5">
           <div className="col-md-3">
             <h4>Languages</h4>
@@ -65,8 +101,8 @@ function About() {
           </div>
         </div>
 
+        {/* Relevant Work Experience */}
         <h2 className="text-center mb-4 display-5">Relevant Work Experience</h2>
-
         <div className="mb-5">
           <h4>
             African Geospace — Lead Front End Software Engineer{" "}
@@ -79,9 +115,9 @@ function About() {
               execution, and delivery.
             </li>
             <li>
-              Streamlined UX/UI design from wireframes to implementation, creating
-              responsive, accessible, and modern interfaces aligned with user
-              needs and stakeholder expectations.
+              Streamlined UX/UI design from wireframes to implementation,
+              creating responsive, accessible, and modern interfaces aligned
+              with user needs and stakeholder expectations.
             </li>
             <li>
               Presented technical demos and progress updates to stakeholders,

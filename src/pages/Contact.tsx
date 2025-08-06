@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../css/contactForm.css";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,29 @@ function Contact() {
     message: "",
   });
 
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const validate = () => {
+    const newErrors: { [key: string]: string } = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    if (formData.name.trim() === "") {
+      newErrors.name = "Name is required.";
+    }
+
+    if (formData.subject.trim() === "") {
+      newErrors.subject = "Subject is required.";
+    }
+    if (formData.message.trim() === "") {
+      newErrors.message = "Message is required.";
+    }
+
+    return newErrors;
+  };
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -16,6 +40,11 @@ function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
     // We'll connect EmailJS here later
     console.log("Form submitted:", formData);
   };
@@ -33,10 +62,10 @@ function Contact() {
           I’d love to hear from you. Fill out the form below and I’ll be in
           touch promptly—let’s build something impactful together.{" "}
         </p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} noValidate>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
-              Name
+              <strong>Name</strong>
             </label>
             <input
               type="text"
@@ -46,13 +75,13 @@ function Contact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Your Name"
-              required
             />
+            {errors.name && <p className="error">{errors.name}</p>}
           </div>
 
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
-              Email
+              <strong>Email</strong>
             </label>
             <input
               type="email"
@@ -62,13 +91,13 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="you@example.com"
-              required
             />
+            {errors.email && <p className="error">{errors.email}</p>}
           </div>
 
           <div className="mb-3">
             <label htmlFor="subject" className="form-label">
-              Subject
+              <strong>Subject</strong>
             </label>
             <input
               type="text"
@@ -78,13 +107,13 @@ function Contact() {
               value={formData.subject}
               onChange={handleChange}
               placeholder="Reason for reaching out"
-              required
             />
+            {errors.subject && <p className="error">{errors.subject}</p>}
           </div>
 
           <div className="mb-3">
             <label htmlFor="message" className="form-label">
-              Message
+              <strong>Message</strong>
             </label>
             <textarea
               name="message"
@@ -94,11 +123,11 @@ function Contact() {
               value={formData.message}
               onChange={handleChange}
               placeholder="Type your message here..."
-              required
             />
+            {errors.message && <p className="error">{errors.message}</p>}
           </div>
 
-          <button type="submit" className="btn btn-primary w-100">
+          <button type="submit" className="btn btn-primary w-15">
             Send Message
           </button>
         </form>
