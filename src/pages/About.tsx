@@ -8,9 +8,9 @@ function About() {
             <h2 className="mb-4 display-5">About Me</h2>
             <p>
               Hi, I’m Josh — oldest of nine siblings, world traveler, bartender
-              turned software engineer, devouted husband, and soon-to-be dad. My journey thus far has
-              taught me resilience and adaptability, qualities that I bring into
-              every project.
+              turned software engineer, devouted husband, and soon-to-be dad. My
+              journey thus far has taught me resilience and adaptability,
+              qualities that I bring into every project.
             </p>
           </div>
           <div className="col-md-6 d-flex justify-content-center">
@@ -39,10 +39,9 @@ function About() {
           </div>
         </div>
 
-        {/* Professional Summary */}
-        <h2 className="text-center mb-4 display-5">Professional Summary</h2>
         <div className="row mb-5 justify-content-center">
-          <div className="col-md-8">
+          <div className="col-md-6 px-5">
+            <h2 className="text-center mb-4">Professional Summary</h2>
             <p>
               I’m a front-end software engineer with experience leading teams
               through tech residencies and building responsive, user-focused web
@@ -51,10 +50,16 @@ function About() {
               collaborating effectively.
             </p>
           </div>
+          <div className="col-md-6 px-5">
+            <h2 className="text-center mb-4">What Sets Me Apart?</h2>
+            <p>
+              NEED SOMETHING HERE
+            </p>
+          </div>
         </div>
 
         {/* Skills */}
-        <h2 className="text-center mb-4 display-5">Skills</h2>
+        <h2 className="text-center mb-4">Skills</h2>
         <div className="row mb-5">
           <div className="col-md-3">
             <h4>Languages</h4>
@@ -102,7 +107,7 @@ function About() {
         </div>
 
         {/* Relevant Work Experience */}
-        <h2 className="text-center mb-4 display-5">Relevant Work Experience</h2>
+        <h2 className="text-center mb-4">Relevant Work Experience</h2>
         <div className="mb-5">
           <h4>
             African Geospace — Lead Front End Software Engineer{" "}
