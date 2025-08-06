@@ -1,27 +1,26 @@
 function About() {
-  return(
+  return (
     <section className="py-5 bg-light text-dark">
       <div className="container">
-
-        <h2 className="text-center mb-4 display-5">About Me & Professional Summary</h2>
+        <h2 className="text-center mb-4 display-5">
+          About Me & Professional Summary
+        </h2>
 
         <div className="row mb-5">
           <div className="col-md-6">
             <h3 className="h4 mb-3">Personal Summary</h3>
-            <p>
-            </p>
+            <p></p>
           </div>
           <div className="col-md-6">
             <h3 className="h4 mb-3">Professional Summary</h3>
-            <p>
-            </p>
+            <p></p>
           </div>
         </div>
 
-        <h2 className="text-center mb-4 display-5">Skills & Certifications</h2>
+        <h2 className="text-center mb-4 display-5">Skills</h2>
 
         <div className="row mb-5">
-          <div className="col-md-4 mb-4">
+          <div className="col-md-3">
             <h4>Languages</h4>
             <ul>
               <li>JavaScript</li>
@@ -31,7 +30,7 @@ function About() {
               <li>Python</li>
             </ul>
           </div>
-          <div className="col-md-4 mb-4">
+          <div className="col-md-3">
             <h4>Frameworks & Libraries</h4>
             <ul>
               <li>React</li>
@@ -41,7 +40,7 @@ function About() {
               <li>Auth0</li>
             </ul>
           </div>
-          <div className="col-md-4 mb-4">
+          <div className="col-md-3">
             <h4>Tools & DevOps</h4>
             <ul>
               <li>AI Tools</li>
@@ -54,10 +53,7 @@ function About() {
               <li>Node.js</li>
             </ul>
           </div>
-        </div>
-
-        <div className="row mb-5">
-          <div className="col-md-6 mb-4">
+          <div className="col-md-3">
             <h4>Soft Skills</h4>
             <ul>
               <li>Communication</li>
@@ -67,49 +63,75 @@ function About() {
               <li>Leadership</li>
             </ul>
           </div>
-          <div className="col-md-6 mb-4">
-            <h4>Certifications</h4>
-            <ul>
-              <li>Coding Temple - Front End Specialized Software Engineer</li>
-              {/* Add more certifications here if needed */}
-            </ul>
-          </div>
         </div>
 
-        <h2 className="text-center mb-4 display-5">Work Experience</h2>
+        <h2 className="text-center mb-4 display-5">Relevant Work Experience</h2>
 
         <div className="mb-5">
-          <h4>Coding Temple — Software Engineer Apprenticeship <small className="text-muted">Jan 2025 - Present | Remote</small></h4>
+          <h4>
+            African Geospace — Lead Front End Software Engineer{" "}
+            <small className="text-muted">July 2025 - Present | Remote</small>
+          </h4>
           <ul>
-            <li>Developed dynamic web applications with focus on front-end architecture and responsive UI.</li>
-            <li>Adapted to new technologies under tight deadlines, applying knowledge effectively.</li>
-            <li>Built components using React, Redux, and Bootstrap following best practices.</li>
-            <li>Implemented Git version control, CI/CD workflows, and test-driven development (TDD).</li>
-            <li>Collaborated in agile teams, participating in code reviews and sprint planning.</li>
+            <li>
+              Led front-end development for an aerospace talent platform during
+              an eight-week tech residency, guiding the team through planning,
+              execution, and delivery.
+            </li>
+            <li>
+              Streamlined UX/UI design from wireframes to implementation, creating
+              responsive, accessible, and modern interfaces aligned with user
+              needs and stakeholder expectations.
+            </li>
+            <li>
+              Presented technical demos and progress updates to stakeholders,
+              translating complex development milestones into clear,
+              goal-oriented outcomes.
+            </li>
+            <li>
+              Built scalable front-end architecture using React, Redux Toolkit,
+              TypeScript, and Bootstrap, following best practices and agile
+              methodologies.
+            </li>
+            <li>
+              Fostered team productivity through code reviews, Git workflow
+              standards, and clear task delegation—ensuring high-quality output
+              and timely delivery.
+            </li>
           </ul>
         </div>
 
         <div className="mb-5">
-          <h4>Various Restaurants & Bars — Server, Bartender, Lead Trainer <small className="text-muted">Aug 2016 - Present | DFW, Colorado, Latin America</small></h4>
+          <h4>
+            Coding Temple — Software Engineer Apprenticeship{" "}
+            <small className="text-muted">Jan 2025 - Present | Remote</small>
+          </h4>
           <ul>
-            <li>Delivered high-quality service managing 300+ covers per night at venues like Cheesecake Factory, North Italia, and Del Frisco’s Grille.</li>
-            <li>Mentored new hires as Lead Trainer, instructing on service standards and hospitality.</li>
-            <li>Owned and managed a mobile bar business, demonstrating strong organizational skills.</li>
+            <li>
+              Developed dynamic web applications with focus on front-end
+              architecture and responsive UI.
+            </li>
+            <li>
+              Adapted to new technologies under tight deadlines, applying
+              knowledge effectively.
+            </li>
+            <li>
+              Built components using React, Redux, and Bootstrap following best
+              practices.
+            </li>
+            <li>
+              Implemented Git version control, CI/CD workflows, and test-driven
+              development (TDD).
+            </li>
+            <li>
+              Collaborated in agile teams, participating in code reviews and
+              sprint planning.
+            </li>
           </ul>
         </div>
-
-        <div className="mb-5">
-          <h4>Bench Craft Golf / Power Home Remodeling — Sales & Project Coordinator <small className="text-muted">Jul 2023 - Jan 2025 | Dallas, TX</small></h4>
-          <ul>
-            <li>Managed advertising and renovation projects end-to-end, coordinating timelines and budgets.</li>
-            <li>Conducted client consultations, presented solutions, and secured new business.</li>
-            <li>Consistently exceeded monthly sales targets, contributing to revenue growth.</li>
-          </ul>
-        </div>
-
       </div>
     </section>
   );
-};
+}
 
 export default About;
