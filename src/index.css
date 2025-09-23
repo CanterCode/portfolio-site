@@ -1,1 +1,151 @@
+/* =========================
+   GLOBAL INDEX.CSS
+   ========================= */
 
+/* Import modern, professional font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --primary: #6c63ff;
+  --secondary: #00c9a7;
+  --accent: #ff6584;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.4);
+
+  /* Use fluid font sizing */
+  --h1-size: clamp(2rem, 5vw, 3rem);
+  --h2-size: clamp(1.75rem, 4vw, 2.5rem);
+  --p-size: clamp(0.95rem, 2vw, 1rem);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100%;
+  color: var(--text-light);
+
+  /* Animated gradient */
+  background: linear-gradient(-45deg, #6c63ff, #00c9a7, #ff6584, #6c63ff);
+  background-size: 400% 400%;
+  animation: gradientShift 18s ease infinite;
+
+  /* Overlay hex pattern */
+  background-image: url('/images/hex-pattern.svg');
+  background-repeat: repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+
+  background-attachment: fixed;
+}
+/* =========================
+   TYPOGRAPHY
+   ========================= */
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+p  { font-size: var(--p-size); }
+
+/* =========================
+   CARDS / CONTAINERS
+   ========================= */
+
+.card, .home-info, .list-group-item {
+  background: var(--bg-overlay);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: none;
+  color: var(--text-light);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Headshot image styling */
+.headshot {
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  object-fit: cover;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn {
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.6rem 1.2rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: var(--secondary);
+  color: var(--text-light);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   ICON STYLING
+   ========================= */
+
+.glow-icon {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.glow-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
+}
+
+/* =========================
+   RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 992px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .btn { padding: 0.5rem 1rem; }
+  .headshot { width: 80%; }
+  .home-info { padding: 1rem; }
+}
+
+@media (max-width: 576px) {
+  h1 { font-size: 1.8rem; }
+  p { font-size: 0.9rem; }
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .row {
+    flex-direction: column;
+    text-align: center;
+  }
+}

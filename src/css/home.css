@@ -1,0 +1,149 @@
+/* =========================
+   HOME PAGE STYLING
+   ========================= */
+
+/* Info section container */
+.home-info {
+  font-size: 1rem; /* slightly larger than before for readability */
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  margin-top: 2rem;
+  color: var(--text-light);
+}
+
+/* Paragraph text */
+.info-par {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+/* Skill icon list */
+.row .glow-icon {
+  font-size: 3rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.row .glow-icon:hover {
+  transform: scale(1.25);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+}
+
+/* Buttons */
+.home-info .btn {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.home-info .btn-primary:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Headings inside home */
+h4 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  margin-bottom: 0.25rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+/* Headshot image */
+.headshot {
+  border: 4px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  object-fit: cover;
+}
+
+/* =========================
+   MODERN BUTTONS
+   ========================= */
+
+.home-info .btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.65rem 1.8rem;
+  margin: 0.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  text-decoration: none;
+  overflow: hidden;
+}
+
+/* Hover effect: slide gradient + lift */
+.home-info .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+}
+
+/* Optional: subtle shine animation on hover */
+.home-info .btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: all 0.7s ease;
+}
+
+.home-info .btn:hover::after {
+  left: 125%;
+}
+
+
+/* =========================
+   RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 992px) {
+  .home-info {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-info {
+    padding: 1rem;
+  }
+  h1 { font-size: 2rem; }
+  h4 { font-size: 1.1rem; }
+  .headshot { width: 80%; margin-top: 1.5rem; }
+  .home-info .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-info {
+    padding: 0.8rem;
+  }
+  h1 { font-size: 1.8rem; }
+  p { font-size: 0.9rem; }
+}

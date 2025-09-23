@@ -1,0 +1,66 @@
+/* =========================
+   NAVBAR STYLING
+   ========================= */
+
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.8rem 1rem;
+  z-index: 1000;
+}
+
+/* Brand styling */
+.navbar-brand {
+  color: var(--text-light);
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: var(--accent);
+}
+
+.brand-highlight {
+  font-weight: 400;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Nav links */
+.nav-link {
+  color: var(--text-light);
+  font-weight: 500;
+  margin: 0 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary);
+}
+
+/* Active state styling */
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link.active::after {
+  content: "";
+  display: block;
+  width: 50%;
+  margin: 0.25rem auto 0;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+/* Mobile toggler customization */
+.custom-toggler {
+  border: none;
+  filter: invert(100%) brightness(200%);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}

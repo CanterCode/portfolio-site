@@ -1,4 +1,4 @@
-import "../css/homepage.css";
+import "../css/home.css";
 import { Icon } from "@iconify/react";
 
 import "../css/skillIcons.css";
