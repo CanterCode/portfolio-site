@@ -44,12 +44,6 @@ function Projects() {
               </ul>
             ) : (
               <>
-                <p className="text-muted">
-                  This section will eventually contain a full list of your
-                  projects, from small experiments to major builds. Feel free to
-                  organize by category, stack, or date.
-                </p>
-
                 <div className="alert alert-secondary" role="alert">
                   🚧 Still building out this section — check back soon!
                 </div>
