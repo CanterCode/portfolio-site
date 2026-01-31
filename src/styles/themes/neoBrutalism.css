@@ -1,0 +1,39 @@
+/* =========================
+   NEO-BRUTALISM
+   Bold borders, high contrast, chunky typography
+   Flat, loud color blocks
+   ========================= */
+
+html[data-theme="neoBrutalism"] {
+  --color-bg: #fffef9;
+  --color-bg-elevated: #ffffff;
+  --color-bg-overlay: #ffffff;
+  --color-text: #0d0d0d;
+  --color-text-muted: #2d2d2d;
+  --color-primary: #ff6b35;
+  --color-primary-hover: #e55a2b;
+  --color-accent: #ffd23f;
+  --color-accent-alt: #ee4266;
+  --color-border: #0d0d0d;
+  --color-focus: #ff6b35;
+  --color-error: #ee4266;
+
+  --shadow-sm: 4px 4px 0 #0d0d0d;
+  --shadow-md: 6px 6px 0 #0d0d0d;
+  --shadow-lg: 8px 8px 0 #0d0d0d;
+  --shadow-card: 6px 6px 0 #0d0d0d;
+
+  --border-width: 3px;
+  --border-radius: 0;
+  --border-radius-lg: 0;
+  --transition: 0.15s ease;
+
+  --font-body: "Space Grotesk", "Courier New", monospace;
+  --font-display: "Space Grotesk", "Courier New", monospace;
+}
+
+html[data-theme="neoBrutalism"] body {
+  background: #fffef9;
+  color: var(--color-text);
+  border: var(--border-width) solid var(--color-border);
+}

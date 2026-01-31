@@ -1,175 +1,233 @@
+import "../styles/pages/about.css";
+
+const RESUME_URL = "/Josh-Canterbury-Resume.pdf";
+
 function About() {
   return (
-    <section className="py-5 bg-light text-dark">
+    <section className="about-page page-section" aria-labelledby="about-heading">
       <div className="container">
-        {/* About Me with collage side-by-side */}
-        <div className="row mb-5 align-items-center">
-          <div className="col-md-6">
-            <h2 className="mb-4 display-5">About Me</h2>
-            <p>
-              Hi, I’m Josh — oldest of nine siblings, world traveler, bartender
-              turned software engineer, devouted husband, and soon-to-be dad. My
-              journey thus far has taught me resilience and adaptability,
-              qualities that I bring into every project.
-            </p>
+        <p className="text-center">
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="about-resume-link"
+          >
+            Download Full Resume (PDF) →
+          </a>
+        </p>
+
+        {/* Hero: Headshot + About Me */}
+        <div className="about-hero">
+          <div className="about-headshot-wrap">
+            <img
+              src="/images/headshot.jpg"
+              alt="Joshua Canterbury"
+              className="headshot about-headshot"
+            />
           </div>
-          <div className="col-md-6 d-flex justify-content-center">
-            {/* Placeholder for your interactive collage */}
-            <div
-              className="border rounded"
-              style={{
-                width: "100%",
-                maxWidth: "400px",
-                height: "250px",
-                backgroundColor: "#e9ecef",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#6c757d",
-                fontStyle: "italic",
-                fontSize: "1.2rem",
-                textAlign: "center",
-                padding: "1rem",
-              }}
-            >
-              Interactive Collage Placeholder
-              <br />
-              (Travel, Family, Adventures...)
-            </div>
+          <div className="about-intro">
+            <h2 id="about-heading">About Me</h2>
+            <p>
+              Hi, I'm Josh — oldest of nine, world traveler, bartender turned
+              software engineer, devoted husband, and dad. I spent 10 years in
+              the service industry and in sales before pivoting to code, and that
+              background shapes how I work: I'm personable, clear under pressure,
+              and I actually like working with people.
+            </p>
           </div>
         </div>
 
-        <div className="row mb-5 justify-content-center">
-          <div className="col-md-6 px-5">
-            <h2 className="text-center mb-4">Professional Summary</h2>
+        {/* Two-column: Professional Summary + What Sets Me Apart */}
+        <div className="about-two-col">
+          <article className="about-block">
+            <h3>Professional Summary</h3>
             <p>
-              I’m a front-end software engineer with experience leading teams
-              through tech residencies and building responsive, user-focused web
-              apps. Skilled in React, Redux, TypeScript, and agile workflows,
-              I’m passionate about delivering clean, maintainable code and
-              collaborating effectively.
+              Full-stack software engineer with hands-on experience in
+              JavaScript, Python, React, and modern frameworks. I build
+              intuitive, scalable web apps and care about clean code and solid
+              UX. I've led front-end work on real products and I'm comfortable
+              with Git, CI/CD, and agile workflows.
             </p>
-          </div>
-          <div className="col-md-6 px-5">
-            <h2 className="text-center mb-4">What Sets Me Apart?</h2>
+          </article>
+          <article className="about-block">
+            <h3>What Sets Me Apart</h3>
             <p>
-              NEED SOMETHING HERE
+              Before I became a software engineer, I spent years in hospitality
+              and sales. That gave me strong interpersonal and communication
+              skills — I'm outgoing, easy to work with, and I communicate clearly
+              with teammates and clients. I adapt quickly and thrive in
+              fast-paced environments.
             </p>
-          </div>
+            <p className="mb-0">
+              I'm still early in my engineering career, but my soft skills are a
+              real advantage. I bring the same reliability and collaboration
+              you'd expect from a senior teammate, just with fewer years of code
+              behind me.
+            </p>
+          </article>
         </div>
 
         {/* Skills */}
-        <h2 className="text-center mb-4">Skills</h2>
-        <div className="row mb-5">
-          <div className="col-md-3">
-            <h4>Languages</h4>
-            <ul>
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>Python</li>
-            </ul>
+        <section
+          className="about-skills"
+          aria-labelledby="skills-heading"
+        >
+          <h2 id="skills-heading">Skills</h2>
+          <div className="about-skills-grid">
+            <div className="about-skill-col">
+              <h4>Languages</h4>
+              <ul>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Python</li>
+              </ul>
+            </div>
+            <div className="about-skill-col">
+              <h4>Frameworks & Libraries</h4>
+              <ul>
+                <li>React</li>
+                <li>Redux</li>
+                <li>Bootstrap</li>
+                <li>Tailwind CSS</li>
+                <li>Flask</li>
+                <li>Firebase</li>
+                <li>Auth0</li>
+              </ul>
+            </div>
+            <div className="about-skill-col">
+              <h4>Tools & DevOps</h4>
+              <ul>
+                <li>Node.js</li>
+                <li>GitHub</li>
+                <li>RESTful APIs</li>
+                <li>VS Code</li>
+                <li>Netlify</li>
+                <li>Vercel</li>
+                <li>CI/CD</li>
+                <li>TDD</li>
+                <li>AWS</li>
+              </ul>
+            </div>
+            <div className="about-skill-col">
+              <h4>Soft Skills</h4>
+              <ul>
+                <li>Communication</li>
+                <li>Team collaboration</li>
+                <li>Creative problem-solving</li>
+                <li>Time management</li>
+                <li>Leadership</li>
+              </ul>
+            </div>
           </div>
-          <div className="col-md-3">
-            <h4>Frameworks & Libraries</h4>
-            <ul>
-              <li>React</li>
-              <li>Redux</li>
-              <li>Bootstrap</li>
-              <li>Firebase</li>
-              <li>Auth0</li>
-            </ul>
-          </div>
-          <div className="col-md-3">
-            <h4>Tools & DevOps</h4>
-            <ul>
-              <li>AI Tools</li>
-              <li>GitHub</li>
-              <li>RESTful APIs</li>
-              <li>VS Code</li>
-              <li>Vercel</li>
-              <li>CI/CD</li>
-              <li>TDD</li>
-              <li>Node.js</li>
-            </ul>
-          </div>
-          <div className="col-md-3">
-            <h4>Soft Skills</h4>
-            <ul>
-              <li>Communication</li>
-              <li>Team Collaboration</li>
-              <li>Creative Problem-Solving</li>
-              <li>Time Management</li>
-              <li>Leadership</li>
-            </ul>
-          </div>
-        </div>
+        </section>
 
-        {/* Relevant Work Experience */}
-        <h2 className="text-center mb-4">Relevant Work Experience</h2>
-        <div className="mb-5">
-          <h4>
-            African Geospace — Lead Front End Software Engineer{" "}
-            <small className="text-muted">July 2025 - Present | Remote</small>
-          </h4>
-          <ul>
-            <li>
-              Led front-end development for an aerospace talent platform during
-              an eight-week tech residency, guiding the team through planning,
-              execution, and delivery.
+        {/* Experience */}
+        <section
+          className="about-experience"
+          aria-labelledby="experience-heading"
+        >
+          <h2 id="experience-heading">Experience</h2>
+
+          <div className="about-exp-item">
+            <h4>Lead Frontend Software Engineer — African Geospace</h4>
+            <p className="about-exp-meta">
+              Remote · Jul 2025 – Oct 2025 (3-mo internship)
+            </p>
+            <ul>
+              <li>
+                Directed front-end development for an aerospace talent platform;
+                guided architecture and code quality.
+              </li>
+              <li>
+                Collaborated with the CEO on UI/UX and stakeholder expectations.
+              </li>
+              <li>
+                Mentored developers on Git, code reviews, and React best
+                practices.
+              </li>
+            </ul>
+          </div>
+
+          <div className="about-exp-item">
+            <h4>Software Engineer Apprentice — Coding Temple</h4>
+            <p className="about-exp-meta">Remote · Jan 2025 – Aug 2025</p>
+            <ul>
+              <li>
+                Built dynamic web apps with React, Redux, and Bootstrap; focused
+                on responsive UI and reusability.
+              </li>
+              <li>
+                Used Git, GitHub Actions, CI/CD, and test-driven development in
+                daily workflow.
+              </li>
+            </ul>
+          </div>
+
+          <div className="about-exp-item">
+            <h4>
+              Server, Bartender, Lead Trainer — Various restaurants & bars
+            </h4>
+            <p className="about-exp-meta">
+              DFW, Colorado, Latin America · Aug 2016 – Present
+            </p>
+            <ul>
+              <li>
+                High-volume service (300+ covers per night) at venues including
+                Cheesecake Factory, North Italia, Del Frisco's Grille.
+              </li>
+              <li>
+                Lead Trainer: onboarded and mentored new hires on service and
+                hospitality standards.
+              </li>
+              <li>
+                Ran a mobile bar business — private events, logistics, and
+                client coordination.
+              </li>
+            </ul>
+          </div>
+
+          <div className="about-exp-item">
+            <h4>
+              Sales & Project Coordinator — Bench Craft Golf / Power Home
+              Remodeling
+            </h4>
+            <p className="about-exp-meta">Dallas, TX · Jul 2023 – Jan 2025</p>
+            <ul>
+              <li>
+                Managed advertising and renovation projects end-to-end:
+                timelines, budgets, client communication.
+              </li>
+              <li>
+                In-home consultations, tailored solutions, and consistent track
+                record of exceeding sales targets.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Education */}
+        <section
+          className="about-education"
+          aria-labelledby="education-heading"
+        >
+          <h2 id="education-heading">Education</h2>
+          <ul
+            className="list-unstyled"
+            style={{ maxWidth: "40rem", margin: "0 auto" }}
+          >
+            <li style={{ marginBottom: "0.5rem" }}>
+              <strong>Coding Temple</strong> — Certificate, Software Engineering
+              (Frontend Specialized)
             </li>
             <li>
-              Streamlined UX/UI design from wireframes to implementation,
-              creating responsive, accessible, and modern interfaces aligned
-              with user needs and stakeholder expectations.
-            </li>
-            <li>
-              Presented technical demos and progress updates to stakeholders,
-              translating complex development milestones into clear,
-              goal-oriented outcomes.
-            </li>
-            <li>
-              Built scalable front-end architecture using React, Redux Toolkit,
-              TypeScript, and Bootstrap, following best practices and agile
-              methodologies.
-            </li>
-            <li>
-              Fostered team productivity through code reviews, Git workflow
-              standards, and clear task delegation—ensuring high-quality output
-              and timely delivery.
+              <strong>Baylor University & Community College</strong> — 2+ years
+              undergraduate (Business Management & Computer Science)
             </li>
           </ul>
-        </div>
-
-        <div className="mb-5">
-          <h4>
-            Coding Temple — Software Engineer Apprenticeship{" "}
-            <small className="text-muted">Jan 2025 - Present | Remote</small>
-          </h4>
-          <ul>
-            <li>
-              Developed dynamic web applications with focus on front-end
-              architecture and responsive UI.
-            </li>
-            <li>
-              Adapted to new technologies under tight deadlines, applying
-              knowledge effectively.
-            </li>
-            <li>
-              Built components using React, Redux, and Bootstrap following best
-              practices.
-            </li>
-            <li>
-              Implemented Git version control, CI/CD workflows, and test-driven
-              development (TDD).
-            </li>
-            <li>
-              Collaborated in agile teams, participating in code reviews and
-              sprint planning.
-            </li>
-          </ul>
-        </div>
+        </section>
       </div>
     </section>
   );

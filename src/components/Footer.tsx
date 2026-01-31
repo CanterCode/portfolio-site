@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
+import "../styles/footer.css";
 
 const Footer = () => {
   return (
-    <footer className="text-center py-3 mt-auto">
+    <footer className="site-footer" role="contentinfo">
       <div className="container">
-        <small>&copy; {new Date().getFullYear()} Joshua Canterbury's Professional Portfolio Website. Like what you see? <Link to="/contact" className="d-inline">Contact Me!</Link></small>
+        <small>
+          &copy; {new Date().getFullYear()} Joshua Canterbury's Professional
+          Portfolio. Like what you see? <Link to="/contact">Contact Me</Link>
+        </small>
       </div>
     </footer>
   );

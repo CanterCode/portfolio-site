@@ -1,56 +1,59 @@
 import { projects } from "../components/projects";
+import "../styles/pages/projects.css";
 
 function Projects() {
   const highlights = projects.filter((project) => project.isHighlight);
   const allProjects = projects.filter((project) => !project.isHighlight);
 
   return (
-    <section className="py-5 text-dark">
+    <section
+      className="projects-page page-section"
+      aria-labelledby="projects-heading"
+    >
       <div className="container">
-        <h2 className="text-center mb-5 display-5">
-          <strong>Featured Products</strong>
-        </h2>
+        <h2 id="projects-heading">Featured Products</h2>
 
-        <div className="row mb-5">
+        <div className="projects-grid" role="list">
           {highlights.map((project) => (
-            <div className="col-md-4 mb-4" key={project.id}>
-              <div className="card shadow-sm h-100">
-                <div className="card-body d-flex flex-column justify-content-center text-center">
-                  <h5 className="card-title">{project.title}</h5>
-                  <p className="card-text text-muted">{project.description}</p>
-                  <a
-                    className="btn btn-outline-primary mt-auto"
-                    href={project.link}
-                    target="_blank"
-                  >
-                    View Site
-                  </a>
-                </div>
-              </div>
-            </div>
+            <article
+              key={project.id}
+              className="project-card"
+              role="listitem"
+            >
+              <h5>{project.title}</h5>
+              <p>{project.description}</p>
+              {project.link ? (
+                <a
+                  className="btn btn-outline-primary"
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Site
+                </a>
+              ) : (
+                <span className="btn btn-outline-primary" aria-disabled="true">
+                  Coming Soon
+                </span>
+              )}
+            </article>
           ))}
         </div>
 
-        <h3 className="mb-4">Other Projects</h3>
-        <div className="row">
-          <div className="col-12">
-            {allProjects.length > 0 ? (
-              <ul className="list-group">
-                {allProjects.map((project) => (
-                  <li className="list-group-item" key={project.id}>
-                    <strong>{project.title}</strong>: {project.description}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <>
-                <div className="alert alert-secondary" role="alert">
-                  🚧 Still building out this section — check back soon!
-                </div>
-              </>
-            )}
-          </div>
-        </div>
+        <h3>Other Projects</h3>
+        {allProjects.length > 0 ? (
+          <ul className="projects-list">
+            {allProjects.map((project) => (
+              <li key={project.id}>
+                <strong>{project.title}</strong>: {project.description}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="projects-empty">
+            Still building out this section — check back soon!
+          </p>
+        )}
       </div>
     </section>
   );

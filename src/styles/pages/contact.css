@@ -1,0 +1,80 @@
+/* =========================
+   CONTACT PAGE - Theme-aware form
+   ========================= */
+
+.contact-page {
+  color: var(--color-text);
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.contact-page h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.contact-intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  line-height: var(--line-height-relaxed);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-field label {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  padding: 0.75em 1em;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg-elevated);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(49, 130, 206, 0.25));
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.contact-field textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.contact-error {
+  color: var(--color-error);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.contact-submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,66 @@
+/* =========================
+   LAYOUT - Fluid, responsive
+   ========================= */
+
+/* Container - max-width with padding, centers content */
+.container {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* Main content area - flex grow to push footer down */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* Page sections - consistent vertical rhythm */
+.page-section {
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+
+/* Two-column grid - responsive */
+.two-col-grid {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+@media (min-width: 48rem) {
+  .two-col-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 64rem) {
+  .two-col-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  }
+}
+
+/* Card grid for projects */
+.card-grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+}
+@media (min-width: 36rem) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 64rem) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Prevent horizontal overflow */
+html,
+body {
+  overflow-x: hidden;
+}

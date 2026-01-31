@@ -1,7 +1,6 @@
-import "../css/home.css";
+import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-
-import "../css/skillIcons.css";
+import "../styles/pages/home.css";
 
 const skills = [
   { slug: "react", label: "React", color: "#61DAFB" },
@@ -20,71 +19,68 @@ const skills = [
 
 function Home() {
   return (
-    <div className="container mt-5">
-      {/* Header and Image */}
-      <div className="row align-items-center">
-        <div className="col-md-6 mt-5">
-          <div>
+    <section className="home-page" aria-labelledby="home-heading">
+      <div className="container">
+        <div className="home-hero">
+          <div className="home-intro">
             <h4>Howdy! My name is</h4>
-            <h1>Joshua Canterbury</h1>
+            <h1 id="home-heading">Joshua Canterbury</h1>
             <p>
-              I’m a software engineer and passionate web developer who crafts
+              I'm a software engineer and passionate web developer who crafts
               clean, engaging, and responsive websites and web applications. By
               blending thoughtful design with modern development, I create user
               interfaces and experiences that feel intuitive and effortless.
             </p>
-          </div>
-          <div className="gap-5 mt-3 text-muted home-info">
-            {/* Technical overview */}
-            <p style={{ flex: 1.5 }} className="info-par">
-              My core strength is front-end development but I also work across
-              the stack with Node.js and Firebase. Most importantly, I’m always
-              learning and expanding my skills to deliver full, production-ready
-              solutions.
-            </p>
 
-            {/* Skill list */}
-            <div className="container py-3">
-              <div className="row justify-content-center">
+            <div className="home-info">
+              <p className="info-par">
+                My core strength is front-end development, but I also work across
+                the stack with Node.js and Firebase. Most importantly, I'm
+                always learning and expanding my skills to deliver full,
+                production-ready solutions.
+              </p>
+
+              <div className="home-skills" role="list" aria-label="Technologies">
                 {skills.map((skill, idx) => (
                   <div
                     key={idx}
-                    className="col-4 col-sm-3 col-md-2 text-center mb-4"
+                    className="home-skill-icon"
+                    role="listitem"
+                    tabIndex={0}
                   >
                     <Icon
                       icon={`simple-icons:${skill.slug}`}
                       style={{ color: skill.color, fontSize: "3rem" }}
-                      className="glow-icon"
+                      aria-label={skill.label}
                     />
                   </div>
                 ))}
               </div>
-            </div>
-            
-            <div className="row mt-3">
-              <div className="col-md-12 d-flex justify-content-center align-items-center">
-                <a className="btn btn-primary me-3" href="/about">
+
+              <div className="home-cta">
+                <Link className="btn btn-primary" to="/about">
                   Get to Know Me
-                </a>
-                <a className="btn btn-primary me-3" href="/projects">
+                </Link>
+                <Link className="btn btn-primary" to="/projects">
                   See My Work
-                </a>
-                <a className="btn btn-primary me-3" href="/contact">
+                </Link>
+                <Link className="btn btn-primary" to="/contact">
                   Let's Connect
-                </a>
+                </Link>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="col-md-6 align-items-center d-flex justify-content-center mt-5">
-          <img
-            className="headshot rounded-circle w-75"
-            src="images/headshot.jpg"
-          />
+          <div className="home-headshot-wrap">
+            <img
+              src="/images/headshot.jpg"
+              alt="Joshua Canterbury"
+              className="headshot home-headshot"
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

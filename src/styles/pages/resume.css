@@ -1,0 +1,33 @@
+/* =========================
+   RESUME PAGE - Theme-aware
+   ========================= */
+
+.resume-page {
+  color: var(--color-text);
+  text-align: center;
+  padding-block: 3rem;
+}
+
+.resume-link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+.resume-link:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+.resume-link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.resume-note {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.resume-note a {
+  color: var(--color-primary);
+}

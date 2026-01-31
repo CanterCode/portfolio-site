@@ -9,9 +9,12 @@ import Resume from "./pages/Resume";
 
 function App() {
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="app-layout">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Navbar />
-      <main className="flex-fill py-4">
+      <main id="main-content" className="app-main" role="main">
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />

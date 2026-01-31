@@ -1,0 +1,25 @@
+/* =========================
+   FOOTER - Theme-aware
+   ========================= */
+
+.site-footer {
+  margin-top: auto;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  border-top: var(--border-width) solid var(--color-border);
+  background: var(--color-bg-overlay);
+}
+
+.site-footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.site-footer a:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
