@@ -42,7 +42,7 @@ const Navbar = () => {
           to="/"
           aria-label="Joshua Canterbury - Home"
         >
-          Joshua Canterbury{" "}
+          Joshua{" "}
           <span className="brand-highlight">• Software Engineer</span>
         </Link>
 
