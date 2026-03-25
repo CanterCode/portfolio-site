@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/pages/resume.css";
+import "./Resume.css";
 
 const RESUME_URL = "/Josh-Canterbury-Resume.pdf";
 

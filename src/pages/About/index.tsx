@@ -1,4 +1,4 @@
-import "../styles/pages/about.css";
+import "./About.css";
 
 const RESUME_URL = "/Josh-Canterbury-Resume.pdf";
 

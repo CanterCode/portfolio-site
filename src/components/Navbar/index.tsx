@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useAppSelector, useAppDispatch } from "../store/hooks";
-import { setTheme, themeLabels, type ThemeId } from "../store/themeSlice";
-import "../styles/navbar.css";
+import { useAppSelector, useAppDispatch } from "../../store/hooks";
+import { setTheme, themeLabels, type ThemeId } from "../../store/themeSlice";
+import "./Navbar.css";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();

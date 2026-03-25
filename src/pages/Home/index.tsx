@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import "../styles/pages/home.css";
+import "./Home.css";
 
 const skills = [
   { slug: "react", label: "React", color: "#61DAFB" },

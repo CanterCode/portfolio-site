@@ -1,5 +1,5 @@
-import { projects } from "../components/projects";
-import "../styles/pages/projects.css";
+import { projects } from "../../components/projects";
+import "./Projects.css";
 
 function Projects() {
   const highlights = projects.filter((project) => project.isHighlight);
