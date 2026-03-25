@@ -6,12 +6,16 @@
 - **Data:** `projects.ts` exists but contains placeholders for links and media.
 
 ## Recent Changes
+- [x] Created reusable NavButton component.
 - [x] Initial project inventory completed.
 - [x] Guidelines defined (React/Vite/Bootstrap).
 - [x] Folder structure reorganized for CSS colocation.
 
+## Completed
+- [x] Home Page Content
+
 ## Active Sprint
-- **Waiting for User Direction** (Ready to start Project Data, Hero, or Icon migration).
+- **Next Steps:** Moving toward project data or icon migration.
 
 ## Blockers / Missing Info
 - Project URLs (GitHub/Live) for EZ Track, AstroSkill, and DevHunt.

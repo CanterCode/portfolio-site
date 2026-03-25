@@ -1,3 +1,6 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
 /* =========================
    MAIN STYLES ENTRY
    Imports: reset, typography, layout, utilities, components, themes
@@ -10,8 +13,10 @@
 @import "./styles/global/components.css";
 
 /* Theme files - variables applied via data-theme on html */
-@import "./styles/themes/minimalistic.css";
-@import "./styles/themes/neoBrutalism.css";
-@import "./styles/themes/retro.css";
-@import "./styles/themes/dark.css";
-@import "./styles/themes/flat.css";
+@import "./styles/themes/seniorEngineer.css";
+@import "./styles/themes/ruleBreaker.css";
+@import "./styles/themes/paperJournal.css";
+@import "./styles/themes/hacker.css";
+
+/* Put Tailwind utilities at the end to guarantee override */
+@import "tailwindcss/utilities";

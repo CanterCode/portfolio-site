@@ -1,0 +1,39 @@
+/* =========================
+   THE RULE BREAKER
+   Neo-Brutalism, thick borders, solid hard shadows
+   High contrast
+   ========================= */
+
+html[data-theme="ruleBreaker"] {
+  --color-bg: #fffef9;
+  --color-bg-elevated: #ffffff;
+  --color-bg-overlay: rgba(255, 255, 255, 0.9);
+  --color-text: #000000;
+  --color-text-muted: #222222;
+  --color-primary: #ff3366;
+  --color-primary-hover: #e60039;
+  --color-accent: #ffeb3b; /* Vibrant yellow */
+  --color-accent-alt: #00e5ff; /* Cyan */
+  --color-border: #000000;
+  --color-focus: #ff3366;
+  --color-error: #ff0000;
+
+  --shadow-sm: 4px 4px 0px #000000;
+  --shadow-md: 6px 6px 0px #000000;
+  --shadow-lg: 8px 8px 0px #000000;
+  --shadow-card: 8px 8px 0px #000000;
+
+  --border-width: 3px;
+  --border-radius: 0px;
+  --border-radius-lg: 0px;
+  --transition: 0.1s ease;
+
+  --font-body: "Space Grotesk", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+html[data-theme="ruleBreaker"] body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: var(--border-width) solid var(--color-border);
+}

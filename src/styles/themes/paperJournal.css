@@ -1,0 +1,39 @@
+/* =========================
+   THE PAPER JOURNAL
+   Editorial, serif typography, cream background
+   Elegant and minimal
+   ========================= */
+
+html[data-theme="paperJournal"] {
+  --color-bg: #fdfbf7;
+  --color-bg-elevated: #f4efe6;
+  --color-bg-overlay: rgba(253, 251, 247, 0.85);
+  --color-text: #1a1a1a;
+  --color-text-muted: #4a4a4a;
+  --color-primary: #2c3e2c; /* elegant dark green */
+  --color-primary-hover: #1e2b1e;
+  --color-accent: #8b2635; /* deep red */
+  --color-accent-alt: #c4a77d; /* gold-ish */
+  --color-border: #d4cbb8;
+  --color-focus: #2c3e2c;
+  --color-error: #8b0000;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-card: none;
+
+  --border-width: 1px;
+  --border-radius: 2px;
+  --border-radius-lg: 4px;
+  --transition: 0.3s ease;
+
+  --font-body: "Lora", "Playfair Display", Georgia, serif;
+  --font-display: "Playfair Display", "Lora", Georgia, serif;
+}
+
+html[data-theme="paperJournal"] body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: none;
+}

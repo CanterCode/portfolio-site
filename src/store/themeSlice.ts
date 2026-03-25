@@ -1,22 +1,20 @@
 /**
  * Theme slice - Global UI Design Mode
- * Five themes: minimalistic, neoBrutalism, retro, dark, flat
+ * Four Design Personalities: seniorEngineer, ruleBreaker, paperJournal, hacker
  */
 import { createSlice } from "@reduxjs/toolkit";
 
 export type ThemeId =
-  | "minimalistic"
-  | "neoBrutalism"
-  | "retro"
-  | "dark"
-  | "flat";
+  | "seniorEngineer"
+  | "ruleBreaker"
+  | "paperJournal"
+  | "hacker";
 
 export const themeLabels: Record<ThemeId, string> = {
-  minimalistic: "Minimalistic / Modern",
-  neoBrutalism: "Neo-Brutalism",
-  retro: "Retro",
-  dark: "Dark Mode",
-  flat: "Flat Design",
+  seniorEngineer: "The Senior Engineer",
+  ruleBreaker: "The Rule Breaker",
+  paperJournal: "The Paper Journal",
+  hacker: "The Hacker",
 };
 
 interface ThemeState {
@@ -28,13 +26,13 @@ const STORAGE_KEY = "portfolio-theme";
 function loadTheme(): ThemeId {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored && ["minimalistic", "neoBrutalism", "retro", "dark", "flat"].includes(stored)) {
+    if (stored && ["seniorEngineer", "ruleBreaker", "paperJournal", "hacker"].includes(stored)) {
       return stored as ThemeId;
     }
   } catch {
     /* ignore */
   }
-  return "minimalistic";
+  return "seniorEngineer";
 }
 
 const initialState: ThemeState = {

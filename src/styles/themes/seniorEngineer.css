@@ -1,0 +1,39 @@
+/* =========================
+   THE SENIOR ENGINEER
+   Modern SaaS, soft shadows, rounded corners
+   Professional blue accents
+   ========================= */
+
+html[data-theme="seniorEngineer"] {
+  --color-bg: #f8fafc;
+  --color-bg-elevated: #ffffff;
+  --color-bg-overlay: rgba(248, 250, 252, 0.85);
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-accent: #3b82f6;
+  --color-accent-alt: #0ea5e9;
+  --color-border: #e2e8f0;
+  --color-focus: #3b82f6;
+  --color-error: #ef4444;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  --border-width: 1px;
+  --border-radius: 1rem;
+  --border-radius-lg: 1.5rem;
+  --transition: 0.2s ease;
+
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html[data-theme="seniorEngineer"] body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: none;
+}

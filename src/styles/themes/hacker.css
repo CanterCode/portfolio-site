@@ -1,0 +1,39 @@
+/* =========================
+   THE HACKER
+   Terminal style, pure black, neon green
+   Monospace typography, zero shadows
+   ========================= */
+
+html[data-theme="hacker"] {
+  --color-bg: #000000;
+  --color-bg-elevated: #0a0a0a;
+  --color-bg-overlay: rgba(0, 0, 0, 0.9);
+  --color-text: #00ff00;
+  --color-text-muted: #00cc00;
+  --color-primary: #00ff00;
+  --color-primary-hover: #33ff33;
+  --color-accent: #00ff00;
+  --color-accent-alt: #00ff00;
+  --color-border: #00ff00;
+  --color-focus: #00ff00;
+  --color-error: #ff0033;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-card: none;
+
+  --border-width: 1px;
+  --border-radius: 0px;
+  --border-radius-lg: 0px;
+  --transition: 0.1s linear;
+
+  --font-body: "IBM Plex Mono", "Courier New", monospace;
+  --font-display: "IBM Plex Mono", "Courier New", monospace;
+}
+
+html[data-theme="hacker"] body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: none;
+}

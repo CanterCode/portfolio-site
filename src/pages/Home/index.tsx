@@ -1,81 +1,66 @@
-import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import "./Home.css";
+import NavButton from "../../components/NavButton/NavButton";
 
 const skills = [
-  { slug: "react", label: "React", color: "#61DAFB" },
-  { slug: "nextdotjs", label: "Next.js", color: "#000000" },
-  { slug: "typescript", label: "TypeScript", color: "#3178C6" },
-  { slug: "javascript", label: "JavaScript", color: "#F7DF1E" },
-  { slug: "html5", label: "HTML5", color: "#E34F26" },
-  { slug: "css3", label: "CSS3", color: "#1572B6" },
-  { slug: "github", label: "GitHub", color: "#181717" },
-  { slug: "openai", label: "ChatGPT", color: "#412991" },
-  { slug: "firebase", label: "Firebase", color: "#FFCA28" },
-  { slug: "redux", label: "Redux Toolkit", color: "#764ABC" },
-  { slug: "bootstrap", label: "Bootstrap", color: "#7952B3" },
-  { slug: "tailwindcss", label: "Tailwind CSS", color: "#38B2AC" },
+  { icon: "simple-icons:react", label: "React" },
+  { icon: "simple-icons:typescript", label: "TypeScript" },
+  { icon: "simple-icons:nodedotjs", label: "Node.js" },
+  { icon: "simple-icons:express", label: "Express.js" },
+  { icon: "simple-icons:supabase", label: "Supabase" },
+  { icon: "simple-icons:firebase", label: "Firebase" },
+  { icon: "simple-icons:tailwindcss", label: "Tailwind CSS" },
+  { icon: "lucide:brain", label: "AI Engineering" },
 ];
 
 function Home() {
   return (
-    <section className="home-page" aria-labelledby="home-heading">
-      <div className="container">
-        <div className="home-hero">
-          <div className="home-intro">
-            <h4>Howdy! My name is</h4>
-            <h1 id="home-heading">Joshua Canterbury</h1>
-            <p>
-              I'm a software engineer and passionate web developer who crafts
-              clean, engaging, and responsive websites and web applications. By
-              blending thoughtful design with modern development, I create user
-              interfaces and experiences that feel intuitive and effortless.
+    <section className="text-text w-full flex-grow flex flex-col justify-center items-center py-6" aria-labelledby="home-heading">
+      <div className="w-full max-w-7xl px-6 md:px-12">
+        <div className="flex flex-col md:flex-row items-center justify-center w-full gap-8 lg:gap-12">
+          <div className="w-full lg:w-[55%] flex flex-col justify-center items-center md:items-start text-center md:text-left">
+            <h4 className="text-lg md:text-xl font-normal text-text-muted mb-1">Howdy! My name is</h4>
+            <h1 id="home-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2">Joshua Canterbury</h1>
+            <p className="text-sm text-slate-500 tracking-wide mb-4">React, JavaScript, TypeScript, Node.js, AI Augmentation</p>
+            <p className="mb-4 text-lg leading-relaxed">
+              I'm a DFW based Software Engineer building clean, high-performance web apps. I spent a decade solving high-pressure problems in the service industry before moving into full-stack development. I turn complex ideas into simple, intuitive tools that actually work.
             </p>
 
-            <div className="home-info">
-              <p className="info-par">
-                My core strength is front-end development, but I also work across
-                the stack with Node.js and Firebase. Most importantly, I'm
-                always learning and expanding my skills to deliver full,
-                production-ready solutions.
+            <div className="p-6 md:p-10 mt-2 bg-bg-overlay border border-border rounded-2xl shadow-card text-text">
+              <p className="leading-relaxed mb-6 text-text-muted">
+                I specialize in frontend architecture—creating eye-catching, type-safe UI with React and TypeScript—but I’m just as comfortable on the backend. Whether it’s architecting databases or building out API endpoints, I bridge the gap across the entire stack.
               </p>
 
-              <div className="home-skills" role="list" aria-label="Technologies">
+              <div className="flex flex-wrap justify-center gap-5 py-4" role="list" aria-label="Technologies">
                 {skills.map((skill, idx) => (
                   <div
                     key={idx}
-                    className="home-skill-icon"
+                    className="flex items-center justify-center transition-transform duration-200 hover:scale-125 focus-within:outline focus-within:outline-2 focus-within:outline-focus focus-within:outline-offset-2 rounded"
                     role="listitem"
                     tabIndex={0}
+                    title={skill.label}
                   >
                     <Icon
-                      icon={`simple-icons:${skill.slug}`}
-                      style={{ color: skill.color, fontSize: "3rem" }}
+                      icon={skill.icon}
+                      style={{ fontSize: "2.5rem", color: "var(--color-text)" }}
                       aria-label={skill.label}
                     />
                   </div>
                 ))}
               </div>
 
-              <div className="home-cta">
-                <Link className="btn btn-primary" to="/about">
-                  Get to Know Me
-                </Link>
-                <Link className="btn btn-primary" to="/projects">
-                  See My Work
-                </Link>
-                <Link className="btn btn-primary" to="/contact">
-                  Let's Connect
-                </Link>
+              <div className="flex flex-wrap gap-4 justify-center mt-8">
+                <NavButton label="Get to Know Me" to="/about" />
+                <NavButton label="See My Work" to="/projects" />
+                <NavButton label="Let's Connect" to="/contact" />
               </div>
             </div>
           </div>
 
-          <div className="home-headshot-wrap">
+          <div className="w-full lg:w-[45%] flex justify-center items-center mt-6 md:mt-0">
             <img
               src="/images/headshot.jpg"
               alt="Joshua Canterbury"
-              className="headshot home-headshot"
+              className="w-[85%] sm:w-[75%] md:w-full max-w-[20rem] md:max-w-[26rem] lg:max-w-[28rem] aspect-square object-cover rounded-[2rem] shadow-2xl mx-auto md:ml-auto"
             />
           </div>
         </div>
