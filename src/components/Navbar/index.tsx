@@ -28,13 +28,11 @@ const Navbar = () => {
   }, []);
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `block px-4 py-2 text-text font-medium rounded-lg transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${
-      isActive ? "text-primary bg-primary/10" : ""
+    `block px-4 py-2 text-text font-medium rounded-lg transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${isActive ? "text-primary bg-primary/10" : ""
     }`;
 
   const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `block px-4 py-3 text-text font-medium rounded-lg transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${
-      isActive ? "text-primary bg-primary/10" : ""
+    `block px-4 py-3 text-text font-medium rounded-lg transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${isActive ? "text-primary bg-primary/10" : ""
     }`;
 
   return (
@@ -71,15 +69,15 @@ const Navbar = () => {
             id="theme-toggle"
             aria-controls="theme-dropdown"
           >
-            <span className="text-[0.75em]" aria-hidden="true">
-              ◆
-            </span>
             <span>Change Design</span>
+            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
           {dropdownOpen && (
             <ul
               id="theme-dropdown"
-              className="absolute top-full mt-2 left-1/2 -translate-x-1/2 min-w-[12rem] bg-bg-elevated/90 backdrop-blur-md border border-border rounded-lg shadow-lg p-2 z-[1001] list-none"
+              className="absolute top-full mt-2 left-1/2 -translate-x-1/2 min-w-[12rem] bg-bg-elevated border border-border rounded-lg shadow-lg p-2 z-[1001] list-none"
               role="listbox"
               aria-labelledby="theme-toggle"
               onKeyDown={(e) => {
@@ -90,11 +88,10 @@ const Navbar = () => {
                 <li key={themeId}>
                   <button
                     type="button"
-                    className={`w-full text-left px-4 py-2.5 rounded-lg text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:-outline-offset-2 cursor-pointer ${
-                      currentTheme === themeId
-                        ? "bg-primary text-bg"
-                        : "text-text hover:bg-primary/10"
-                    }`}
+                    className={`w-full text-left px-4 py-2.5 rounded-lg text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:-outline-offset-2 cursor-pointer ${currentTheme === themeId
+                      ? "bg-primary text-bg"
+                      : "text-text hover:bg-primary/10"
+                      }`}
                     onClick={() => {
                       dispatch(setTheme(themeId));
                       setDropdownOpen(false);
@@ -143,9 +140,8 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          mobileOpen ? "max-h-64 mt-2" : "max-h-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-64 mt-2" : "max-h-0"
+          }`}
         id="navbarNav"
       >
         <ul className="flex flex-col gap-1 m-0 p-2 list-none px-4">

@@ -6,16 +6,16 @@
 
 html[data-theme="hacker"] {
   --color-bg: #000000;
-  --color-bg-elevated: #0a0a0a;
+  --color-bg-elevated: #050505;
   --color-bg-overlay: rgba(0, 0, 0, 0.9);
-  --color-text: #00ff00;
-  --color-text-muted: #00cc00;
-  --color-primary: #00ff00;
-  --color-primary-hover: #33ff33;
-  --color-accent: #00ff00;
-  --color-accent-alt: #00ff00;
-  --color-border: #00ff00;
-  --color-focus: #00ff00;
+  --color-text: #00ff41;
+  --color-text-muted: #008f11;
+  --color-primary: #00ff41;
+  --color-primary-hover: #00ff00;
+  --color-accent: #00ff41;
+  --color-accent-alt: #008f11;
+  --color-border: #003b00;
+  --color-focus: #00ff41;
   --color-error: #ff0033;
 
   --shadow-sm: none;
@@ -36,4 +36,17 @@ html[data-theme="hacker"] body {
   background: var(--color-bg);
   color: var(--color-text);
   border: none;
+  text-shadow: 0 0 4px rgba(0, 255, 65, 0.4);
+}
+
+html[data-theme="hacker"] body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  pointer-events: none;
+  z-index: 9999;
 }

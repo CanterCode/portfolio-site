@@ -10,12 +10,14 @@ html[data-theme="ruleBreaker"] {
   --color-bg-overlay: rgba(255, 255, 255, 0.9);
   --color-text: #000000;
   --color-text-muted: #222222;
-  --color-primary: #ff3366;
-  --color-primary-hover: #e60039;
-  --color-accent: #ffeb3b; /* Vibrant yellow */
-  --color-accent-alt: #00e5ff; /* Cyan */
+  --color-primary: #ff6600;
+  --color-primary-hover: #ff8533;
+  --color-accent: #ffeb3b;
+  /* Vibrant yellow */
+  --color-accent-alt: #00e5ff;
+  /* Cyan */
   --color-border: #000000;
-  --color-focus: #ff3366;
+  --color-focus: #ff6600;
   --color-error: #ff0000;
 
   --shadow-sm: 4px 4px 0px #000000;
@@ -35,5 +37,5 @@ html[data-theme="ruleBreaker"] {
 html[data-theme="ruleBreaker"] body {
   background: var(--color-bg);
   color: var(--color-text);
-  border: var(--border-width) solid var(--color-border);
+  box-shadow: inset 0 0 0 var(--border-width) var(--color-border);
 }
