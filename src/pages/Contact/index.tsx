@@ -1,4 +1,11 @@
 import { useState } from "react";
+import {
+  FaPaperPlane,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaLinkedin,
+  FaGithub,
+} from "react-icons/fa";
 import "./Contact.css";
 
 function Contact() {
@@ -10,6 +17,7 @@ function Contact() {
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validate = () => {
     const newErrors: { [key: string]: string } = {};
@@ -47,117 +55,154 @@ function Contact() {
       setErrors(validationErrors);
       return;
     }
-    console.log("Form submitted:", formData);
+    
+    setIsSubmitting(true);
+    // Simulate API call
+    setTimeout(() => {
+      console.log("Form submitted:", formData);
+      setIsSubmitting(false);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      alert("Message sent successfully!");
+    }, 1000);
   };
 
   return (
-    <section
-      className="contact-page page-section"
-      aria-labelledby="contact-heading"
-    >
-      <div className="container">
-        <h2 id="contact-heading">Get In Touch</h2>
-        <p className="contact-intro">
-          Seeking a reliable, creative developer to bring your ideas to life?
-          Whether it's a job opportunity, freelance project, or collaboration,
-          I'd love to hear from you. Fill out the form below and I'll be in
-          touch promptly—let's build something impactful together.
-        </p>
+    <section className="contact-page" aria-labelledby="contact-heading">
+      <div className="contact-container">
+        {/* Left Side: Info */}
+        <div className="contact-info">
+          <h2 id="contact-heading">Get In Touch</h2>
+          <p className="contact-intro">
+            Seeking a reliable, creative developer to bring your ideas to life?
+            Whether it's a job opportunity, freelance project, or collaboration,
+            I'd love to hear from you. Let's build something impactful together.
+          </p>
 
-        <form
-          onSubmit={handleSubmit}
-          noValidate
-          className="contact-form"
-          aria-label="Contact form"
-        >
-          <div className="contact-field">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              required
-              aria-required="true"
-              aria-invalid={!!errors.name}
-              aria-describedby={errors.name ? "name-error" : undefined}
-            />
-            {errors.name && (
-              <span id="name-error" className="contact-error" role="alert">
-                {errors.name}
-              </span>
-            )}
+          <div className="info-items">
+            <div className="info-item">
+              <FaEnvelope className="info-icon icon-glow" aria-hidden="true" />
+              <span>joshcanterbury.dev@gmail.com</span>
+            </div>
+            <div className="info-item">
+              <FaMapMarkerAlt className="info-icon icon-glow" aria-hidden="true" />
+              <span>DFW / Remote</span>
+            </div>
           </div>
 
-          <div className="contact-field">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="you@example.com"
-              required
-              aria-required="true"
-              aria-invalid={!!errors.email}
-              aria-describedby={errors.email ? "email-error" : undefined}
-            />
-            {errors.email && (
-              <span id="email-error" className="contact-error" role="alert">
-                {errors.email}
-              </span>
-            )}
+          <div className="social-links">
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-link" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="https://github.com" target="_blank" rel="noreferrer" className="social-link" aria-label="GitHub">
+              <FaGithub />
+            </a>
           </div>
+        </div>
 
-          <div className="contact-field">
-            <label htmlFor="subject">Subject</label>
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              placeholder="Reason for reaching out"
-              required
-              aria-required="true"
-              aria-invalid={!!errors.subject}
-              aria-describedby={errors.subject ? "subject-error" : undefined}
-            />
-            {errors.subject && (
-              <span id="subject-error" className="contact-error" role="alert">
-                {errors.subject}
-              </span>
-            )}
-          </div>
+        {/* Right Side: Form */}
+        <div className="contact-form-wrapper">
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="contact-form"
+            aria-label="Contact form"
+          >
+            <div className="form-row">
+              <div className="contact-field">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your Name"
+                  required
+                  aria-required="true"
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? "name-error" : undefined}
+                />
+                {errors.name && (
+                  <span id="name-error" className="contact-error" role="alert">
+                    {errors.name}
+                  </span>
+                )}
+              </div>
 
-          <div className="contact-field">
-            <label htmlFor="message">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              rows={5}
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Type your message here..."
-              required
-              aria-required="true"
-              aria-invalid={!!errors.message}
-              aria-describedby={errors.message ? "message-error" : undefined}
-            />
-            {errors.message && (
-              <span id="message-error" className="contact-error" role="alert">
-                {errors.message}
-              </span>
-            )}
-          </div>
+              <div className="contact-field">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="you@example.com"
+                  required
+                  aria-required="true"
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? "email-error" : undefined}
+                />
+                {errors.email && (
+                  <span id="email-error" className="contact-error" role="alert">
+                    {errors.email}
+                  </span>
+                )}
+              </div>
+            </div>
 
-          <button type="submit" className="btn btn-primary contact-submit">
-            Send Message
-          </button>
-        </form>
+            <div className="contact-field">
+              <label htmlFor="subject">Subject</label>
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Reason for reaching out"
+                required
+                aria-required="true"
+                aria-invalid={!!errors.subject}
+                aria-describedby={errors.subject ? "subject-error" : undefined}
+              />
+              {errors.subject && (
+                <span id="subject-error" className="contact-error" role="alert">
+                  {errors.subject}
+                </span>
+              )}
+            </div>
+
+            <div className="contact-field">
+              <label htmlFor="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                rows={4}
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Type your message here..."
+                required
+                aria-required="true"
+                aria-invalid={!!errors.message}
+                aria-describedby={errors.message ? "message-error" : undefined}
+              />
+              {errors.message && (
+                <span id="message-error" className="contact-error" role="alert">
+                  {errors.message}
+                </span>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="btn btn-primary contact-submit"
+              disabled={isSubmitting}
+            >
+              <FaPaperPlane aria-hidden="true" />
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
