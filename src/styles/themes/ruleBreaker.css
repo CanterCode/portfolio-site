@@ -4,7 +4,7 @@
    High contrast
    ========================= */
 
-html[data-theme="ruleBreaker"] {
+html[data-theme='ruleBreaker'] {
   --color-bg: #fffef9;
   --color-bg-elevated: #ffffff;
   --color-bg-overlay: rgba(255, 255, 255, 0.9);
@@ -30,12 +30,24 @@ html[data-theme="ruleBreaker"] {
   --border-radius-lg: 0px;
   --transition: 0.1s ease;
 
-  --font-body: "Space Grotesk", sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
 }
 
-html[data-theme="ruleBreaker"] body {
+html[data-theme='ruleBreaker'] body {
   background: var(--color-bg);
   color: var(--color-text);
   box-shadow: inset 0 0 0 var(--border-width) var(--color-border);
+}
+
+/* Fix accessibility for outline buttons in Rule Breaker theme */
+html[data-theme='ruleBreaker'] .btn-outline-primary {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+html[data-theme='ruleBreaker'] .btn-outline-primary:hover {
+  background: var(--color-accent);
+  color: var(--color-text);
+  border-color: var(--color-text);
 }

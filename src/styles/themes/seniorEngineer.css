@@ -4,7 +4,7 @@
    Professional blue accents
    ========================= */
 
-html[data-theme="seniorEngineer"] {
+html[data-theme='seniorEngineer'] {
   --color-bg: #f8fafc;
   --color-bg-elevated: #ffffff;
   --color-bg-overlay: rgba(248, 250, 252, 0.85);
@@ -28,11 +28,11 @@ html[data-theme="seniorEngineer"] {
   --border-radius-lg: 1.5rem;
   --transition: 0.2s ease;
 
-  --font-body: "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-html[data-theme="seniorEngineer"] body {
+html[data-theme='seniorEngineer'] body {
   background: var(--color-bg);
   color: var(--color-text);
   border: none;

@@ -95,7 +95,9 @@
 .social-link {
   color: var(--color-text-muted);
   font-size: 1.5rem;
-  transition: color var(--transition), transform var(--transition);
+  transition:
+    color var(--transition),
+    transform var(--transition);
 }
 
 .social-link:hover {
@@ -156,7 +158,9 @@
   background: var(--color-bg); /* Use base bg inside the card for contrast */
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--border-radius);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
 .contact-field input:focus,
@@ -202,4 +206,117 @@
 .contact-submit:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+}
+
+/* =========================
+   FORM VALIDATION & THEMES
+   ========================= */
+
+.contact-field input[aria-invalid='true'],
+.contact-field textarea[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+/* Rule Breaker: Thick intense borders */
+[data-theme='ruleBreaker'] .contact-field input[aria-invalid='true'],
+[data-theme='ruleBreaker'] .contact-field textarea[aria-invalid='true'] {
+  border-width: 3px;
+  border-color: var(--color-error);
+}
+
+/* Senior Engineer: Soft highlighting */
+[data-theme='seniorEngineer'] .contact-field input[aria-invalid='true'],
+[data-theme='seniorEngineer'] .contact-field textarea[aria-invalid='true'] {
+  box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.2);
+  border-color: var(--color-error);
+}
+
+/* =========================
+   TOAST FEEDBACK UI
+   ========================= */
+.contact-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  background: var(--color-bg-elevated);
+  border: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-card, 0 4px 12px rgba(0, 0, 0, 0.1));
+  border-radius: var(--border-radius-lg);
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(10px);
+  animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Theme-Specific Toast Stylings */
+[data-theme='hacker'] .contact-toast {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px var(--color-primary);
+}
+
+[data-theme='ruleBreaker'] .contact-toast {
+  border-width: 3px;
+  border-color: var(--color-text);
+  box-shadow: 6px 6px 0 var(--color-primary);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.toast-message {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: var(--text-base);
+}
+
+.toast-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toast-retry-btn {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  border-radius: var(--border-radius, 4px);
+  padding: 0.35rem 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.toast-retry-btn:hover {
+  opacity: 0.85;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition);
+  padding: 0.25rem;
+}
+
+.toast-close:hover {
+  color: var(--color-error);
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

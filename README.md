@@ -1,54 +1,47 @@
-# React + TypeScript + Vite
+# CanterCode Portfolio Architecture
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Built to demonstrate operational resilience, frontend architecture, and the ability to ship production-ready software in high-pressure environments.**
 
-Currently, two official plugins are available:
+Welcome to the technical documentation for my digital portfolio. This repository is more than just a typical digital resume; it is a live demonstration of advanced state management, component architecture, and modern React development principles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## The "Why": Stateful UI & Design Personalities
 
-## Expanding the ESLint configuration
+A static portfolio fails to convey technical depth. To visually represent my capability to manage global application state and dynamically render UI components, this portfolio implements a **Redux-driven theme engine**. 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Instead of a simple light/dark toggle, the site supports four entirely distinct "Design Personalities":
+1. **Senior Engineer**: High-contrast, accessibility-first, modern corporate.
+2. **Rule Breaker**: Neo-brutalist, aggressive shadows, vibrant blocking.
+3. **Paper Journal**: Warm, organic, low-strain reading experience.
+4. **Hacker**: Terminal CRT aesthetic, neon-on-black, pure monospace.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+This architecture requires components to flexibly adapt to massive shifts in CSS variables, enforcing rigorous best practices such as decoupling logic from specific styling implementations.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## The Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project was engineered for performance, strict type safety, and immediate feedback loops:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **React & TypeScript**: Providing a tightly-coupled, type-safe, and component-driven UI.
+- **Redux Toolkit**: Centralized, predictable global state container, governing the theme engine and persisting user preferences across sessions.
+- **Tailwind CSS**: Utility-first CSS framework enabling highly customizable, performance-driven styling without the bloat of monolithic external stylesheets. 
+- **EmailJS**: Serverless architecture for instantaneous lead generation and contact form submissions.
+- **Framer Motion**: Delivering intentional, non-distracting micro-interactions to elevate perceived application performance.
+
+## Engineering Highlights
+
+### State Handling & Context Management
+- **`useSelector` & `useDispatch`**: Driving the site-wide contextual themes. Component hydration is seamlessly bridged, ensuring no flickering on dynamic shifts.
+- **`useRef` & Serverless Forms**: Direct DOM manipulation strictly reserved for EmailJS form integrations to maximize rendering efficiency.
+- **Custom Hooks**: Implementation of complex, performance-first wrappers (e.g., handling carousel media using Embla).
+
+### Responsive & Accessible by Design (a11y)
+Conducted comprehensive site-wide audits to ensure a logical semantic tree (`H1` ➔ `H2` ➔ `H3`), pervasive global focus-states (`:focus-visible`), and accessible contrast ratios—specifically validating difficult palettes like the neon-hacker visual scheme.
+
+## AI-Augmented Workflow
+
+This site was built utilizing advanced AI collaboration protocols (Cursor, Claude, and Gemini Antigravity). Employing an AI-augmented process allowed for:
+- Accelerated, rigorous iteration loops.
+- Intelligent code refactoring and context-aware error handling.
+- Maximum operational velocity without sacrificing code integrity.
+
+---
+_Designed and engineered in Dallas, TX. Open to high-impact roles and challenging problems._

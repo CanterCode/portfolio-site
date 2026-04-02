@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { useAppSelector, useAppDispatch } from "../../store/hooks";
-import { setTheme, themeLabels, type ThemeId } from "../../store/themeSlice";
+import { useState, useRef, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
+import { setTheme, themeLabels, type ThemeId } from '../../store/themeSlice';
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -10,12 +10,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const themes: ThemeId[] = [
-    "seniorEngineer",
-    "ruleBreaker",
-    "paperJournal",
-    "hacker",
-  ];
+  const themes: ThemeId[] = ['seniorEngineer', 'ruleBreaker', 'paperJournal', 'hacker'];
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -23,16 +18,18 @@ const Navbar = () => {
         setDropdownOpen(false);
       }
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `block px-4 py-2 text-text font-medium rounded-lg transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${isActive ? "text-primary bg-primary/10" : ""
+    `block px-4 py-2 text-text font-medium rounded-lg transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${
+      isActive ? 'text-primary bg-primary/10' : ''
     }`;
 
   const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `block px-4 py-3 text-text font-medium rounded-lg transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${isActive ? "text-primary bg-primary/10" : ""
+    `block px-4 py-3 text-text font-medium rounded-lg transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${
+      isActive ? 'text-primary bg-primary/10' : ''
     }`;
 
   return (
@@ -48,8 +45,10 @@ const Navbar = () => {
           to="/"
           aria-label="Joshua Canterbury - Home"
         >
-          Joshua Canterbury{" "}
-          <span className="font-normal text-[0.65em] opacity-85 hidden sm:inline">• Software Engineer</span>
+          Joshua Canterbury{' '}
+          <span className="font-normal text-[0.65em] opacity-85 hidden sm:inline">
+            • Software Engineer
+          </span>
         </Link>
 
         {/* Theme Toggle - Center */}
@@ -70,8 +69,19 @@ const Navbar = () => {
             aria-controls="theme-dropdown"
           >
             <span>Change Design</span>
-            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            <svg
+              className="w-4 h-4 ml-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </button>
           {dropdownOpen && (
@@ -81,17 +91,18 @@ const Navbar = () => {
               role="listbox"
               aria-labelledby="theme-toggle"
               onKeyDown={(e) => {
-                if (e.key === "Escape") setDropdownOpen(false);
+                if (e.key === 'Escape') setDropdownOpen(false);
               }}
             >
               {themes.map((themeId) => (
                 <li key={themeId}>
                   <button
                     type="button"
-                    className={`w-full text-left px-4 py-2.5 rounded-lg text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:-outline-offset-2 cursor-pointer ${currentTheme === themeId
-                      ? "bg-primary text-bg"
-                      : "text-text hover:bg-primary/10"
-                      }`}
+                    className={`w-full text-left px-4 py-2.5 rounded-lg text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:-outline-offset-2 cursor-pointer ${
+                      currentTheme === themeId
+                        ? 'bg-primary text-bg'
+                        : 'text-text hover:bg-primary/10'
+                    }`}
                     onClick={() => {
                       dispatch(setTheme(themeId));
                       setDropdownOpen(false);
@@ -135,28 +146,44 @@ const Navbar = () => {
           aria-controls="navbarNav"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          <span className="block w-5 h-[2px] bg-current shadow-[0_-6px_0_currentColor,0_6px_0_currentColor]" aria-hidden="true"></span>
+          <span
+            className="block w-5 h-[2px] bg-current shadow-[0_-6px_0_currentColor,0_6px_0_currentColor]"
+            aria-hidden="true"
+          ></span>
         </button>
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-64 mt-2" : "max-h-0"
-          }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 rounded-lg ${
+          mobileOpen ? 'max-h-64 mt-2 bg-bg-elevated border border-border shadow-md' : 'max-h-0'
+        }`}
         id="navbarNav"
       >
         <ul className="flex flex-col gap-1 m-0 p-2 list-none px-4">
           <li>
-            <NavLink to="/about" className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+            <NavLink
+              to="/about"
+              className={mobileNavLinkClass}
+              onClick={() => setMobileOpen(false)}
+            >
               About
             </NavLink>
           </li>
           <li>
-            <NavLink to="/projects" className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+            <NavLink
+              to="/projects"
+              className={mobileNavLinkClass}
+              onClick={() => setMobileOpen(false)}
+            >
               Projects
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+            <NavLink
+              to="/contact"
+              className={mobileNavLinkClass}
+              onClick={() => setMobileOpen(false)}
+            >
               Contact
             </NavLink>
           </li>

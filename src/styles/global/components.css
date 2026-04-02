@@ -14,7 +14,9 @@
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-card);
   backdrop-filter: blur(0.5rem);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
 /* Headshot */
@@ -63,7 +65,7 @@
   color: var(--color-bg);
 }
 
-.btn[aria-disabled="true"],
+.btn[aria-disabled='true'],
 .btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
@@ -72,8 +74,8 @@
 
 /* Form inputs - theme-aware */
 .form-control,
-input[type="text"],
-input[type="email"],
+input[type='text'],
+input[type='email'],
 textarea {
   width: 100%;
   padding: 0.75em 1em;
@@ -82,7 +84,9 @@ textarea {
   background: var(--color-bg-elevated);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--border-radius);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 .form-control:focus,
 input:focus,
@@ -116,7 +120,9 @@ textarea::placeholder {
 /* Icons - theme-aware */
 .icon-glow {
   filter: drop-shadow(0 0 4px currentColor);
-  transition: transform var(--transition), filter var(--transition);
+  transition:
+    transform var(--transition),
+    filter var(--transition);
 }
 .icon-glow:hover {
   transform: scale(1.1);

@@ -4,7 +4,7 @@
    Monospace typography, zero shadows
    ========================= */
 
-html[data-theme="hacker"] {
+html[data-theme='hacker'] {
   --color-bg: #000000;
   --color-bg-elevated: #050505;
   --color-bg-overlay: rgba(0, 0, 0, 0.9);
@@ -21,32 +21,40 @@ html[data-theme="hacker"] {
   --shadow-sm: none;
   --shadow-md: none;
   --shadow-lg: none;
-  --shadow-card: none;
+  --shadow-card:
+    0 0 10px rgba(0, 255, 65, 0.4), 0 0 20px rgba(0, 255, 65, 0.2),
+    inset 0 0 5px rgba(0, 255, 65, 0.2);
 
   --border-width: 1px;
   --border-radius: 0px;
   --border-radius-lg: 0px;
   --transition: 0.1s linear;
 
-  --font-body: "IBM Plex Mono", "Courier New", monospace;
-  --font-display: "IBM Plex Mono", "Courier New", monospace;
+  --font-body: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-display: 'IBM Plex Mono', 'Courier New', monospace;
 }
 
-html[data-theme="hacker"] body {
+html[data-theme='hacker'] body {
   background: var(--color-bg);
   color: var(--color-text);
   border: none;
   text-shadow: 0 0 4px rgba(0, 255, 65, 0.4);
 }
 
-html[data-theme="hacker"] body::after {
-  content: "";
+html[data-theme='hacker'] body::after {
+  content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
   pointer-events: none;
   z-index: 9999;
 }
