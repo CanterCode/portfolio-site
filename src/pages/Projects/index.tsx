@@ -51,7 +51,10 @@ function ProjectCarousel({ media }: { media: MediaItem[] }) {
                 <video
                   src={item.url}
                   className="w-full h-full object-contain bg-black/5"
-                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                   controlsList="nodownload"
                   preload="metadata"
                 >
@@ -227,7 +230,7 @@ function Projects() {
                       }}
                     >
                       {project.media[0].type === 'video' && (
-                        <video src={project.media[0].url} className="w-full h-full object-cover" />
+                        <video src={project.media[0].url} className="w-full h-full object-cover" autoPlay muted loop playsInline />
                       )}
                       {project.media[0].type === 'image' && (
                         <>

@@ -1,4 +1,4 @@
-﻿import './About.css';
+import './About.css';
 import { FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
 
 const RESUME_URL = '/assets/Joshua%20Canterbury%20-%20Software%20Engineer%20-%20Resume.pdf';
@@ -50,7 +50,7 @@ function About() {
               About Me
             </h1>
             <p className="text-lg text-text-muted leading-relaxed">
-              Hi, I'm Josh â€” oldest of nine, world traveler, devoted husband, father, and
+              Hi, I'm Josh &mdash; oldest of nine, world traveler, devoted husband, father, and
               bartender turned full-stack developer. I spent a decade running high-volume restaurant
               floors across DFW before pivoting to software engineering. Today, I build scalable web
               applications with the same operational resilience I used to manage 300+ guests a
@@ -83,7 +83,7 @@ function About() {
             </p>
             <p className="text-text-muted leading-relaxed">
               I bring deep interpersonal skills, clear communication, and a "clear the board"
-              mentality to every engineering team I joinâ€”proving that the soft skills required to
+              mentality to every engineering team I join&mdash;proving that the soft skills required to
               manage a chaotic Dallas dining room are the same ones needed to ship successful
               software.
             </p>
@@ -183,10 +183,10 @@ function About() {
               </h3>
               <ul className="space-y-1.5 text-text-muted">
                 <li>
-                  <strong>Coding Temple</strong> â€” Certificate, Full-Stack Software Engineer
+                  <strong>Coding Temple</strong> &mdash; Certificate, Full-Stack Software Engineer
                 </li>
                 <li>
-                  <strong>Baylor University</strong> â€” Undergraduate Studies (Computer Science &
+                  <strong>Baylor University</strong> &mdash; Undergraduate Studies (Computer Science &
                   Business)
                 </li>
               </ul>
@@ -206,7 +206,7 @@ function About() {
               <div className="absolute w-4 h-4 rounded-full bg-primary -left-[35px] top-1.5 border-4 border-bg"></div>
               <h3 className="text-xl font-bold text-text">Full-Stack Software Engineer</h3>
               <p className="text-primary font-medium mb-1">Freelance and Contract | Remote</p>
-              <p className="text-sm text-text-muted mb-3">July 2025 â€“ Present</p>
+              <p className="text-sm text-text-muted mb-3">July 2025 &ndash; Present</p>
               <ul className="list-disc ml-5 space-y-2 text-text-muted leading-relaxed marker:text-primary">
                 <li>
                   Led a team of frontend engineers on a 3-month contract with African Geospace to
@@ -237,7 +237,7 @@ function About() {
               <div className="absolute w-4 h-4 rounded-full bg-border -left-[35px] top-1.5 border-4 border-bg"></div>
               <h3 className="text-xl font-bold text-text">Software Engineer Apprentice</h3>
               <p className="text-primary font-medium mb-1">Coding Temple | Remote</p>
-              <p className="text-sm text-text-muted mb-3">January 2025 â€“ October 2025</p>
+              <p className="text-sm text-text-muted mb-3">January 2025 &ndash; October 2025</p>
               <ul className="list-disc ml-5 space-y-2 text-text-muted leading-relaxed marker:text-primary">
                 <li>
                   Built responsive, front-end heavy web apps focusing on clean component
@@ -259,14 +259,14 @@ function About() {
               <p className="text-primary font-medium mb-1">
                 Calabrese & Various Venues | DFW, Colorado, Latin America
               </p>
-              <p className="text-sm text-text-muted mb-3">August 2016 â€“ Present</p>
+              <p className="text-sm text-text-muted mb-3">August 2016 &ndash; Present</p>
               <ul className="list-disc ml-5 space-y-2 text-text-muted leading-relaxed marker:text-primary">
                 <li>
                   Directed high-volume operational workflows and trained cross-functional teams,
                   ensuring peak service performance under intense pressure.
                 </li>
                 <li>
-                  Developed an operational resilience and incident-response mindsetâ€”skills that
+                  Developed an operational resilience and incident-response mindset&mdash;skills that
                   directly translate to debugging, managing agile sprints, and meeting aggressive
                   software deadlines.
                 </li>
@@ -280,7 +280,7 @@ function About() {
               <p className="text-primary font-medium mb-1">
                 Bench Craft Golf / Power Home Remodeling | Dallas, TX
               </p>
-              <p className="text-sm text-text-muted mb-3">August 2023 â€“ January 2025</p>
+              <p className="text-sm text-text-muted mb-3">August 2023 &ndash; January 2025</p>
               <ul className="list-disc ml-5 space-y-2 text-text-muted leading-relaxed marker:text-primary">
                 <li>
                   Directed end-to-end project lifecycles, managing technical requirements and

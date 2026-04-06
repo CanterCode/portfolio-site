@@ -37,8 +37,8 @@ function Home() {
 
             <div className="p-6 md:p-10 mt-2 bg-bg-overlay border border-border rounded-2xl shadow-card text-text">
               <p className="leading-relaxed mb-6 text-text-muted">
-                I specialize in frontend architecture—creating eye-catching, type-safe UI with React
-                and TypeScript—but I’m just as comfortable on the backend. Whether it’s architecting
+                I specialize in frontend architecture - creating eye-catching, type-safe UI with React
+                and TypeScript - but I'm just as comfortable on the backend. Whether it's architecting
                 databases or building out API endpoints, I bridge the gap across the entire stack.
               </p>
 

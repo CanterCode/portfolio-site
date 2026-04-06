@@ -22,7 +22,7 @@ Based on `package.json`, the main dependencies powering the application are:
 - **Projects Page**: The page is divided into "Featured Projects" and "Other Projects", driven by data from `src/components/projects/projects.ts`. It parses an array of projects and splits them based on an `isFeatured` boolean flag. Featured projects display in a large carousel card format, while other projects display in a standardized vertical archive list of horizontal cards.
 
 ## What is Missing / Next Steps
-- **Project Links & Media**: Monitor ongoing active projects for final image/video asset insertion.
+- **Project Links & Media**: Compressed video assets are synced and linked. Monitor active projects for any final content updates.
 - **Production Monitoring**: Evaluate real-world site performance and error metrics upon live launch.
 
 ## Completed Status

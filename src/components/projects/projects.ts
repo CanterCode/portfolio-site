@@ -36,11 +36,11 @@ export const projects: Project[] = [
       'Figma',
     ],
     description:
-      'As a Full Stack Software Engineer, I wasn\'t just coding; I was architecting the "Single Source of Truth" for construction inventory. I spearheaded the Supabase schema design and built the Express.js API layers that allowed for sub-second tool check-ins. My focus was on data integrity—ensuring that when a project manager looks at their dashboard, the material costs are accurate to the penny.',
+      'As a Full Stack Software Engineer, I wasn\'t just coding; I was architecting the "Single Source of Truth" for construction inventory. I spearheaded the Supabase schema design and built the Express.js API layers that allowed for sub-second tool check-ins. My focus was on data integrity - ensuring that when a project manager looks at their dashboard, the material costs are accurate to the penny.',
     githubUrl: 'https://github.com/bananabrann/eztrack',
     isFeatured: true,
     media: [
-      { type: 'video', url: '/project media/eztrack/eztrack-demo-video.mp4' },
+      { type: 'video', url: '/project media/eztrack/Eztrack-Demo-Video-sm.mp4' },
       { type: 'image', url: '/project media/eztrack/ez-pic-1.jpeg' },
       { type: 'image', url: '/project media/eztrack/ez-pic-2.jpeg' },
       { type: 'image', url: '/project media/eztrack/ez-pic-3.jpeg' },
@@ -84,16 +84,16 @@ export const projects: Project[] = [
     subtitle: 'High-Conversion Home Improvement Platform',
     stack: ['React', 'TypeScript', 'EmailJS', 'Tailwind'],
     description:
-      'In this Full Stack Developer role, I acted as a technical consultant for a local business. I didn\'t just build a site; I built a lead-generation engine. I focused on "Time-to-Lead" optimization—designing a custom React architecture that facilitates immediate SMS/Email notifications for the owner, ensuring they never miss a high-value home improvement inquiry.',
+      'In this Full Stack Developer role, I acted as a technical consultant for a local business. I didn\'t just build a site; I built a lead-generation engine. I focused on "Time-to-Lead" optimization - designing a custom React architecture that facilitates immediate SMS/Email notifications for the owner, ensuring they never miss a high-value home improvement inquiry.',
     githubUrl: 'https://github.com/CanterCode/integrity-reno',
     isFeatured: true,
     media: [
-      { type: 'video', url: '/project media/integ/demo-1.mp4' },
+      { type: 'video', url: '/project media/integ/Demo-1-sm.mp4' },
       { type: 'image', url: '/project media/integ/integ-pic-1.png' },
       { type: 'image', url: '/project media/integ/integ-pic-2.png' },
       { type: 'image', url: '/project media/integ/integ-pic-3.png' },
       { type: 'image', url: '/project media/integ/integ-pic-4.png' },
-      { type: 'video', url: '/project media/integ/demo-2-ba.mp4' },
+      { type: 'video', url: '/project media/integ/Demo-2-Ba-sm.mp4' },
     ],
   },
   {
