@@ -35,7 +35,7 @@ export default function () {
             textAlign: 'center',
           }}
         >
-          Node.js & React Developer
+          JavaScript & React Developer
         </div>
       </div>
     ),
