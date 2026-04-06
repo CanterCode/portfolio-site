@@ -1,8 +1,8 @@
 import { ImageResponse } from '@vercel/og';
 
+export const runtime = 'edge';
 
-
-export default function () {
+export async function GET() {
   return new ImageResponse(
     (
       <div
@@ -14,7 +14,6 @@ export default function () {
           width: '100%',
           height: '100%',
           backgroundColor: '#000',
-          fontFamily: 'sans-serif',
         }}
       >
         <div
@@ -24,6 +23,7 @@ export default function () {
             color: 'white',
             marginBottom: '20px',
             textAlign: 'center',
+            display: 'flex',
           }}
         >
           Joshua Canterbury | Software Engineer
@@ -33,6 +33,7 @@ export default function () {
             fontSize: '40px',
             color: '#aaa',
             textAlign: 'center',
+            display: 'flex',
           }}
         >
           JavaScript & React Developer
