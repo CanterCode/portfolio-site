@@ -28,8 +28,8 @@ const Navbar = () => {
     }`;
 
   const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `block px-4 py-3 text-text font-medium rounded-lg transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${
-      isActive ? 'text-primary bg-primary/10' : ''
+    `block px-6 py-4 text-text text-lg font-medium rounded-xl transition-all duration-200 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2 ${
+      isActive ? 'text-primary bg-primary/10 shadow-sm' : 'hover:bg-primary/5 hover:text-primary'
     }`;
 
   return (
@@ -139,55 +139,72 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 bg-transparent border border-border rounded-lg text-text flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus"
+          className={`md:hidden relative p-2.5 w-11 h-11 bg-transparent border rounded-lg text-text flex items-center justify-center transition-all duration-200 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus ${
+            mobileOpen ? 'border-primary text-primary bg-primary/5' : 'border-border hover:bg-primary/5'
+          }`}
           type="button"
           aria-label="Toggle navigation menu"
           aria-expanded={mobileOpen}
           aria-controls="navbarNav"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          <span
-            className="block w-5 h-[2px] bg-current shadow-[0_-6px_0_currentColor,0_6px_0_currentColor]"
-            aria-hidden="true"
-          ></span>
+          <div className="flex flex-col justify-center items-center w-5 h-5 relative">
+            <span
+              className={`absolute h-[2px] w-full bg-current transform transition-all duration-300 ease-in-out ${
+                mobileOpen ? 'rotate-45' : '-translate-y-1.5'
+              }`}
+            />
+            <span
+              className={`absolute h-[2px] w-full bg-current transform transition-all duration-300 ease-in-out ${
+                mobileOpen ? 'opacity-0' : 'opacity-100'
+              }`}
+            />
+            <span
+              className={`absolute h-[2px] w-full bg-current transform transition-all duration-300 ease-in-out ${
+                mobileOpen ? '-rotate-45' : 'translate-y-1.5'
+              }`}
+            />
+          </div>
         </button>
       </div>
 
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 rounded-lg ${
-          mobileOpen ? 'max-h-64 mt-2 bg-bg-elevated border border-border shadow-md' : 'max-h-0'
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          mobileOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
         }`}
         id="navbarNav"
       >
-        <ul className="flex flex-col gap-1 m-0 p-2 list-none px-4">
-          <li>
-            <NavLink
-              to="/about"
-              className={mobileNavLinkClass}
-              onClick={() => setMobileOpen(false)}
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/projects"
-              className={mobileNavLinkClass}
-              onClick={() => setMobileOpen(false)}
-            >
-              Projects
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              className={mobileNavLinkClass}
-              onClick={() => setMobileOpen(false)}
-            >
-              Contact
-            </NavLink>
-          </li>
-        </ul>
+        <div className="bg-bg-elevated/95 backdrop-blur-xl border border-border/50 shadow-2xl rounded-2xl mx-auto ring-1 ring-border/30">
+          <ul className="flex flex-col gap-2 m-0 p-4 list-none">
+            <li>
+              <NavLink
+                to="/about"
+                className={mobileNavLinkClass}
+                onClick={() => setMobileOpen(false)}
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/projects"
+                className={mobileNavLinkClass}
+                onClick={() => setMobileOpen(false)}
+              >
+                Projects
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={mobileNavLinkClass}
+                onClick={() => setMobileOpen(false)}
+              >
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
