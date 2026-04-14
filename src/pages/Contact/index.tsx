@@ -125,7 +125,7 @@ function Contact() {
 
             <div className="social-links">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/joshua-canterbury-se/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
@@ -134,7 +134,7 @@ function Contact() {
                 <FaLinkedin />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/CanterCode"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
